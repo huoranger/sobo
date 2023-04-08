@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="used_tags(title, usedTags)">
+    <div th:if="${!#lists.isEmpty(usedTags)}" class="card">
+        <div class="card-header" style="background-color: white;">
+            <span th:text="${title}">常用标签</span>
+        </div>
+        <div class="card-body">
+            <a th:each="tag : ${usedTags}"
+               th:text="${tag.name}"
+               th:href="${'/tag/' + tag.name}"
+               th:style="${'color:#606a78;padding: 2px 10px;border-radius: 3px;display: inline-block;margin: 5px;font-size: ' + #numbers.formatDecimal(T(java.lang.Math).floor(T(java.lang.Math).random()* 14) + 10,1,0) + 'px;border: 0px solid ' + tag.color + ';'}"
+                href="#" ></a>
+        </div>
+    </div>
+</div>
+
+</html>

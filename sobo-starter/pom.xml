@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sobo</artifactId>
+        <groupId>com.huoranger</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>1.0.0</modelVersion>
+    <artifactId>sobo-starter</artifactId>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.huoranger</groupId>
+            <artifactId>sobo-facade</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.huoranger</groupId>
+            <artifactId>sobo-portal</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.huoranger</groupId>
+            <artifactId>sobo-infrastructure</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+                </configuration>
+                <!-- mvn spring-boot:repackage -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <!-- 这儿填写的项目名就是打包后的项目名 -->
+        <finalName>sobo</finalName>
+    </build>
+
+</project>

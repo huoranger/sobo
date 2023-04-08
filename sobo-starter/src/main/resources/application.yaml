@@ -1,0 +1,75 @@
+spring:
+  profiles:
+    active: dev
+  banner:
+    location: config/banner/banner.txt
+  thymeleaf:
+    cache: true
+  servlet:
+    multipart:
+      max-file-size: 3MB
+
+mybatis:
+  mapper-locations: mapper/*.xml
+  config-location: classpath:config/mybatis/mybatis-config.xml
+custom-config:
+  upload-file:
+    qiniu:
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:mysql:///sobo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 200012
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: true
+  servlet:
+    multipart:
+      max-file-size: 3MB
+
+server:
+  port: 8080
+
+custom-config:
+  mail:
+    smtp:
+      host: smtp.163.com
+      port: 465
+      socketFactoryPort: 465
+      auth: true
+      account: hzc200012@163.com
+      password: HGFPINEUGJLAMQQF
+      fromAddress: SOBO社区 <hzc200012@163.com>
+  upload-file:
+    qiniu:
+      accessKey: ocUfR2UXdzikzb4Am9p978ekHmcgfzwObqu2oM
+      secretKey: GDCxC4z4ngER_vJrULTs9khUbSQQgRTl75RIWkPO
+      bucketName: p-sobo
+      accessDomain: rrb98ycpg.hn-bkt.clouddn.com
+  view:
+    index-page:
+      sidebar-type-names: 公告,活动
+    global:
+      webVersion: 1.0.0
+      websiteName: SOBO社区
+      webDescription: 一个博客社区
+      webAuthor: huoranger
+      websiteLogoUrl:
+      websiteFaviconIconUrl:
+      contactMeTitle: 联系我 - 作者微信
+      pageSize: 10
+      cdnImgStyle:
+      websiteStartYear: 2023
+      websiteRecord: 湘ICP备17014120号
+      githubClientId:
+      clientSecret:
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod

@@ -1,0 +1,10 @@
+            ${AnsiColor.BRIGHT_GREEN}
+                        _.._
+                       (_.-.\
+                   .-,       `
+              .--./ /     _.-""-.          name: ${custom-config.view.global.websiteName}
+               '-. (__..-"       \         version: ${custom-config.view.global.webVersion}
+                  \          a    |        author: ${custom-config.view.global.webAuthor}
+                   ',.__.   ,__.-'/        description: ${custom-config.view.global.webDescription}
+             jgs     '--/_.'----'`
+            ${AnsiStyle.NORMAL}

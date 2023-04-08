@@ -1,0 +1,52 @@
+package com.huoranger.sobo.api.response.article.faq;
+
+import com.huoranger.sobo.api.vo.TagVO;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @author huoranger
+ * @create 2020/11/17
+ * @desc
+ **/
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class FaqInfoResponse implements Serializable {
+
+    private Long id;
+
+    private String auditState;
+
+    private String title;
+
+    private String htmlContent;
+
+    private String markdownContent;
+
+    private Long authorId;
+
+    private String authorNickname;
+
+    private String authorAvatar;
+
+    private Date createAt;
+
+    private Date updateAt;
+
+    private Long views;
+
+    private Long approvals;
+
+    private Long comments;
+
+    private List<TagVO> tags;
+
+}
