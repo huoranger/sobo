@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author huoranger
- * @create 2020/11/2
- * @desc
  **/
 @Component
 @Aspect
@@ -22,6 +20,13 @@ public class GetMappingAspect {
     @Resource
     private HttpServletRequest request;
 
+    /**
+     * 对get请求错误统一处理，返回error视图
+     * @param joinPoint
+     * @param getMapping
+     * @return
+     * @throws Throwable
+     */
     @Around("execution(* com.huoranger.sobo.portal..*.*(..)) && @annotation(getMapping)")
     public Object process(ProceedingJoinPoint joinPoint, GetMapping getMapping) throws Throwable {
         String toastMessage;

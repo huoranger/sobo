@@ -25,10 +25,12 @@
                      class="img-fluid" alt="...">
             </div>
             <div class="text-center"
-                 style="height: 50px;font-size: 18px;font-weight: 500;line-height: 1.5;padding-top: 10px;">
+                 style="height: 65px;font-size: 18px;font-weight: 500;line-height: 1.5;padding-top: 10px;">
                 <a th:href="${'/user/' + posts.authorId}" th:text="${posts.authorName}">阿崔</a>
+                <div th:text="${motto}" style="font-size: 13.5px;color: grey;font-weight: bold">无</div>
             </div>
             <button id="followBtn"
+                    th:if="${posts.authorId + '' != loginUser.id + ''}"
                     th:data-target="${isLogin ? '' : '#loginModal'}"
                     th:data-toggle="${isLogin ? '' : 'modal'}"
                     th:data-has-follow="${hasFollow}"

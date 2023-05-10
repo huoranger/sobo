@@ -13,8 +13,6 @@ import java.util.stream.Collectors;
 
 /**
  * @author huoranger
- * @create 2020/11/4
- * @desc
  **/
 @Component
 public class ArticleCreateListener extends EventBus.EventHandler<Article> {

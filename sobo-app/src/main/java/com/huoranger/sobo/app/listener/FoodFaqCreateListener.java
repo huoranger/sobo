@@ -15,8 +15,6 @@ import java.util.stream.Collectors;
 
 /**
  * @author huoranger
- * @create 2020/12/3
- * @desc
  **/
 @Component
 public class FoodFaqCreateListener extends EventBus.EventHandler<Faq> {

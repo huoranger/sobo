@@ -12,8 +12,6 @@ import java.util.Set;
 
 /**
  * @author huoranger
- * @create 2020/11/24
- * @desc
  **/
 @Component
 public class FaqUpdateListener extends EventBus.EventHandler<Pair<Faq>> {

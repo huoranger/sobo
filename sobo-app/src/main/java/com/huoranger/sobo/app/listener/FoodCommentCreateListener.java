@@ -13,8 +13,6 @@ import java.util.Map;
 
 /**
  * @author huoranger
- * @create 2020/12/3
- * @desc
  **/
 @Component
 public class FoodCommentCreateListener extends EventBus.EventHandler<Map<String, Object>> {

@@ -8,8 +8,7 @@ import javax.annotation.Resource;
 
 /**
  * @author huoranger
- * @create 2020/10/29
- * @desc
+ * @desc 拦截器配置
  **/
 @Configuration
 public class WebConfigurer implements WebMvcConfigurer {

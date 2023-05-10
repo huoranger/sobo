@@ -17,8 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author huoranger
- * @create 2020/11/9
- * @desc
+ * @desc 管理后台和编辑器页面路由
  **/
 @Controller
 @RequestMapping("/")

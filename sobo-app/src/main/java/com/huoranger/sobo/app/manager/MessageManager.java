@@ -30,8 +30,6 @@ import java.util.*;
 
 /**
  * @author huoranger
- * @create 2020/12/5
- * @desc
  **/
 @Component
 public class MessageManager {
@@ -48,6 +46,7 @@ public class MessageManager {
     @IsLogin
     public PageResponseModel<MessagePageResponse> page(PageRequestModel<MessagePageRequest> pageRequestModel) {
         MessagePageRequest pageRequest = pageRequestModel.getFilter();
+        // 构建接收到的信息条件
         Message message = Message.builder()
                 .channel(MessageChannelEn.STATION_LETTER)
                 .receiver(IdValue.builder()
@@ -55,12 +54,14 @@ public class MessageManager {
                         .build())
                 .type(MessageTypeEn.getEntityByDesc(pageRequest.getTypeDesc()))
                 .build();
+        // 查询到符合条件的信息
         PageResult<Message> pageResult = messageRepository.page(PageUtil.buildPageRequest(pageRequestModel, message));
         if (ObjectUtils.isEmpty(pageResult.getList())) {
             return PageResponseModel.build(pageResult.getTotal(), pageResult.getSize(), new ArrayList<>());
         }
-
+        // 发送者id
         Set<Long> userIds = new HashSet<>();
+        // 文章id
         Set<Long> postsIds = new HashSet<>();
         SafesUtil.ofList(pageResult.getList()).forEach(message1 -> {
             userIds.add(Long.valueOf(message1.getSender().getId()));

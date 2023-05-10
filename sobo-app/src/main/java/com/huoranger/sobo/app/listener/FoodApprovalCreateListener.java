@@ -12,8 +12,6 @@ import java.util.List;
 
 /**
  * @author huoranger
- * @create 2020/12/3
- * @desc
  **/
 @Component
 public class FoodApprovalCreateListener extends EventBus.EventHandler<Pair<Long>> {

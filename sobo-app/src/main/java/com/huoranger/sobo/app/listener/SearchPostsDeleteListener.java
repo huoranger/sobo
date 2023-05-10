@@ -9,8 +9,6 @@ import javax.annotation.Resource;
 
 /**
  * @author huoranger
- * @create 2020/12/3
- * @desc
  **/
 @Component
 public class SearchPostsDeleteListener extends EventBus.EventHandler<BasePosts> {

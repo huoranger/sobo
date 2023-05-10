@@ -56,9 +56,18 @@ public class UserController {
     private static final String DOMAIN_ARTICLE_NAME = "文章";
     private static final String DOMAIN_FAQ_NAME = "问答";
 
+    /**
+     * 用户主页
+     * @param uid
+     * @param userRequest
+     * @param request
+     * @param model
+     * @return
+     */
     @GetMapping("/{uid}")
     public String index(@PathVariable("uid") Long uid, UserRequest userRequest, HttpServletRequest request, Model model) {
-        request.setAttribute(Constant.REQUEST_HEADER_TOKEN_KEY, WebUtil.cookieGetSid(request));
+        request.setAttribute(Constant.REQUEST_HEADER_TOKEN_KEY, WebUtil. (request));
+        // 设置页面类型（文章或者问答）
         userRequest.setType(ObjectUtils.isEmpty(userRequest.getType()) ? DOMAIN_ARTICLE_NAME : userRequest.getType());
 
         if (DOMAIN_ARTICLE_NAME.equals(userRequest.getType())) {

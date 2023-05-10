@@ -11,8 +11,6 @@ import java.util.Arrays;
 
 /**
  * @author huoranger
- * @create 2020/12/5
- * @desc
  **/
 @Component
 public class MessagePostsDeleteListener extends EventBus.EventHandler<BasePosts> {

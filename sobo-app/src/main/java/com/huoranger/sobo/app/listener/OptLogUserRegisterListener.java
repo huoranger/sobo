@@ -10,8 +10,6 @@ import javax.annotation.Resource;
 
 /**
  * @author huoranger
- * @create 2020/10/22
- * @desc
  **/
 @Component
 public class OptLogUserRegisterListener extends EventBus.EventHandler<User> {

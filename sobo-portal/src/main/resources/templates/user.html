@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <div th:replace="include/header :: head(~{::title}, ~{}, ~{})">
-    <title th:text="${user.nickname + ' - ' + globalConfig.websiteName}">个人首页 - 开发者客栈</title>
+    <title th:text="${user.nickname + ' - ' + globalConfig.websiteName}">社区博客</title>
 </div>
 <body>
 <div th:replace="include/navbar :: header"></div>
@@ -39,7 +39,7 @@
                          style="height: 43px;font-size: 18px;font-weight: 500;line-height: 1.5;">阿崔</div>
                     <div style="text-align: center;">
                         <button id="followBtn"
-                                th:if="${user.getId() != loginUser.id}"
+                                th:if="${user.getId() + '' != loginUser.id + ''}"
                                 th:data-target="${isLogin ? '' : '#loginModal'}"
                                 th:data-toggle="${isLogin ? '' : 'modal'}"
                                 th:data-has-follow="${hasFollow}"
@@ -55,7 +55,7 @@
                 </div>
                 <div class="col-8" style="padding: 0;">
                     <div class="user-info-date-box">
-                        <p style="margin-right: 40px;"><span style="font-weight: bold">加入时间</span><span th:text="${#dates.format(user.createAt, 'yyyy-MM-dd')}">2020-10-1</span></p>
+                        <p style="margin-right: 40px;"><span style="font-weight: bold">加入时间：</span><span th:text="${#dates.format(user.createAt, 'yyyy-MM-dd')}">2020-10-1</span></p>
                         <p><span style="font-weight: bold">上次登录日期：</span><span th:text="${#dates.format(user.lastLoginTime, 'yyyy-MM-dd')}">2020-10-1</span></p>
                     </div>
                     <div class="user-info-desc-box">

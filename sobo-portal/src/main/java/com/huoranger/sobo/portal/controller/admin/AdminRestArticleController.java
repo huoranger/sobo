@@ -77,6 +77,12 @@ public class AdminRestArticleController {
         return postsApiService.auditState(booleanRequest);
     }
 
+    /**
+     * 类别分页接口
+     * @param pageRequestModel
+     * @param request
+     * @return
+     */
     @PostMapping("/type-page")
     public ResultModel<PageResponseModel<ArticleQueryTypesResponse>> typePage(@RequestBody PageRequestModel<ArticleAdminTypePageRequest> pageRequestModel, HttpServletRequest request) {
         request.setAttribute(Constant.REQUEST_HEADER_TOKEN_KEY, WebUtil.cookieGetSid(request));

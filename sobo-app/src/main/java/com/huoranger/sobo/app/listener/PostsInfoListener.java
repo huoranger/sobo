@@ -9,8 +9,6 @@ import javax.annotation.Resource;
 
 /**
  * @author huoranger
- * @create 2020/11/10
- * @desc
  **/
 @Component
 public class PostsInfoListener extends EventBus.EventHandler<BasePosts> {

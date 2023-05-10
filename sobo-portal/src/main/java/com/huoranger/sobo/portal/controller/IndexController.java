@@ -75,6 +75,7 @@ public class IndexController {
 
         ResultModel<List<ConfigResponse>> configResult = configApiService.queryAvailable(Sets.newHashSet(ConfigTypeEn.HOME_CAROUSEL.getValue()
                 , ConfigTypeEn.SIDEBAR_CAROUSEL.getValue()));
+        // 获取轮播图
         if (configResult.getSuccess() && !ObjectUtils.isEmpty(configResult.getData())) {
             model.addAttribute("homeCarouselList", webUtil.carouselList(configResult.getData(), ConfigTypeEn.HOME_CAROUSEL));
             model.addAttribute("sideCarouselList", webUtil.carouselList(configResult.getData(), ConfigTypeEn.SIDEBAR_CAROUSEL));

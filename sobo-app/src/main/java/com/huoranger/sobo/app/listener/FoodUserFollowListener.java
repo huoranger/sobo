@@ -14,8 +14,6 @@ import java.util.stream.Collectors;
 
 /**
  * @author huoranger
- * @create 20/11/19
- * @desc
  **/
 @Component
 public class FoodUserFollowListener extends EventBus.EventHandler<Pair<Long>> {

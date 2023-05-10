@@ -7,10 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author huoranger
- * @create 2020/11/13
- * @desc
- **/
+ * 跨域配置
+ */
 @Component
 public class CorsInterceptor extends HandlerInterceptorAdapter {
 

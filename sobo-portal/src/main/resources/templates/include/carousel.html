@@ -5,14 +5,14 @@
      th:id="${id}"
      th:if="${!#lists.isEmpty(carouselList)}" id="main_carousel" class="carousel slide" data-ride="carousel">
     <!-- 指示符 -->
-    <ul class="carousel-indicators">
-        <li th:each="carousel,iterStat : ${carouselList}"
-            th:data-slide-to="${iterStat.index}"
-            th:class="${iterStat.index == 0 ? 'active' : ''}"
-            th:data-target="${'#' + id}"
-            data-slide-to="0" class="active"
-            data-target="#main_carousel"></li>
-    </ul>
+<!--    <ul class="carousel-indicators">-->
+<!--        <li th:each="carousel,iterStat : ${carouselList}"-->
+<!--            th:data-slide-to="${iterStat.index}"-->
+<!--            th:class="${iterStat.index == 0 ? 'active' : ''}"-->
+<!--            th:data-target="${'#' + id}"-->
+<!--            data-slide-to="0" class="active"-->
+<!--            data-target="#main_carousel"></li>-->
+<!--    </ul>-->
     <!-- 轮播图片 -->
     <div class="carousel-inner">
         <div th:each="carousel,iterStat : ${carouselList}"
@@ -20,7 +20,11 @@
              class="carousel-item active">
             <a th:href="${carousel.actionUrl}" href="#" >
                 <img th:src="${carousel.imgUrl}" src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
-                <div th:if="${!#strings.isEmpty(carousel.name)}" class="carousel-caption d-none d-sm-block">
+                <div th:if="${!#strings.isEmpty(carousel.name)}" class="carousel-caption d-none d-sm-block" style="right: 0% !important;;
+        bottom: -28px !important;;
+        left: 0% !important;
+        text-align: center;
+        width: 100%;">
                     <h5 th:text="${carousel.name}" style="padding: 15px; background-color: rgba(255,255,255,0.5);color: #343a40;"></h5>
                 </div>
             </a>
@@ -34,5 +38,13 @@
         <span class="carousel-control-next-icon"></span>
     </a>
 </div>
-
+<style>
+    .carousel-caption {
+        right: 0% !important;;
+        bottom: -28px !important;;
+        left: 0% !important;
+        text-align: center;
+        width: 100%;
+    }
+</style>
 </html>

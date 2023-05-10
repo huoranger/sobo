@@ -7,8 +7,6 @@ import java.util.List;
 
 /**
  * @author huoranger
- * @create 2020/12/2
- * @desc
  **/
 public interface SearchDAO {
 

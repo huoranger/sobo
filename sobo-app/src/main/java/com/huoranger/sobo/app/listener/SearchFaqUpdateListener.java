@@ -12,8 +12,6 @@ import javax.annotation.Resource;
 
 /**
  * @author huoranger
- * @create 2020/12/2
- * @desc
  **/
 @Component
 public class SearchFaqUpdateListener extends EventBus.EventHandler<Pair<Faq>> {

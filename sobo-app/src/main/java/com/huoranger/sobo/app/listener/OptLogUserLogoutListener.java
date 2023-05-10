@@ -9,8 +9,6 @@ import javax.annotation.Resource;
 
 /**
  * @author huoranger
- * @create 2020/12/4
- * @desc
  **/
 @Component
 public class OptLogUserLogoutListener extends EventBus.EventHandler<OptLog> {

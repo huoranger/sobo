@@ -21,10 +21,10 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: jdbc:mysql:///sobo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql:///sobo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
-    password: 200012
-    driver-class-name: com.mysql.jdbc.Driver
+    password: hu200012
+    driver-class-name: com.mysql.cj.jdbc.Driver
   thymeleaf:
     cache: true
   servlet:
@@ -46,10 +46,10 @@ custom-config:
       fromAddress: SOBO社区 <hzc200012@163.com>
   upload-file:
     qiniu:
-      accessKey: ocUfR2UXdzikzb4Am9p978ekHmcgfzwObqu2oM
+      accessKey: ocUfR2UXdzikzb4Am9p978ekHmcgfzwObqu2oMs4
       secretKey: GDCxC4z4ngER_vJrULTs9khUbSQQgRTl75RIWkPO
       bucketName: p-sobo
-      accessDomain: rrb98ycpg.hn-bkt.clouddn.com
+      accessDomain: http://ru3a0znxz.hn-bkt.clouddn.com
   view:
     index-page:
       sidebar-type-names: 公告,活动
@@ -64,7 +64,7 @@ custom-config:
       pageSize: 10
       cdnImgStyle:
       websiteStartYear: 2023
-      websiteRecord: 湘ICP备17014120号
+      websiteRecord: 湘ICP备20001227号
       githubClientId:
       clientSecret:
 

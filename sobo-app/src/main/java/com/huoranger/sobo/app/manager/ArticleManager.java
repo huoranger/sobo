@@ -169,8 +169,9 @@ public class ArticleManager extends AbstractPostsManager {
         ArticleAuthorPageRequest request = pageRequestModel.getFilter();
 
         List<String> auditStates = new ArrayList<>();
+        // 设置通过审核
         auditStates.add(AuditStateEn.PASS.getValue());
-
+        // 已经登陆并且是当前用户，添加待审核和不通过的文章
         User user = LoginUserContext.getUser();
         if (!ObjectUtils.isEmpty(user) && user.getId().equals(request.getUserId())) {
             auditStates.add(AuditStateEn.WAIT.getValue());

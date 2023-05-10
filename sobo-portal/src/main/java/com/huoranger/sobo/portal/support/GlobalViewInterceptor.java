@@ -21,8 +21,7 @@ import java.util.Map;
 
 /**
  * @author huoranger
- * @create 2020/10/29
- * @desc
+ * @desc 拦截视图，统一添加用户信息到视图中
  **/
 @Slf4j
 @Component
@@ -42,10 +41,7 @@ public class GlobalViewInterceptor extends HandlerInterceptorAdapter {
         RequestContext.init();
 
         String sid = WebUtil.cookieGetSid(request);
-        if (ObjectUtils.isEmpty(sid)) {
-            return true;
-        }
-
+        // 登陆的用户添加用户信息得到web上下文
         if (!ObjectUtils.isEmpty(sid)) {
             ResultModel<UserInfoResponse> resultModel = userApiService.info(sid);
             if (resultModel.getSuccess() && !ObjectUtils.isEmpty(resultModel.getData())) {
@@ -53,7 +49,6 @@ public class GlobalViewInterceptor extends HandlerInterceptorAdapter {
                 WebContext.setCurrentUser(resultModel.getData());
             }
         }
-
         return true;
     }
 
@@ -70,6 +65,7 @@ public class GlobalViewInterceptor extends HandlerInterceptorAdapter {
                     Map<String, Object> loginUser = new HashMap<>();
                     loginUser.put("id", loginUserInfo.getId());
                     loginUser.put("nickname", loginUserInfo.getNickname());
+                    loginUser.put("motto", loginUserInfo.getSignature());
                     loginUser.put("avatar", loginUserInfo.getAvatar());
                     loginUser.put("role", loginUserInfo.getRole());
                     loginUser.put("unReadMsgNumber", countUnRead());

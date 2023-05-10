@@ -12,8 +12,6 @@ import javax.annotation.Resource;
 
 /**
  * @author huoranger
- * @create 2020/12/5
- * @desc
  **/
 @Component
 public class MessageUserFollowListener extends EventBus.EventHandler<Pair<Long>> {

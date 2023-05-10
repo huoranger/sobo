@@ -2,7 +2,6 @@ package com.huoranger.sobo.portal.support;
 
 /**
  * @author huoranger
- * @create 2020/10/25
  * @desc
  **/
 public interface WebConst {

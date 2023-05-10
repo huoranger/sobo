@@ -15,8 +15,6 @@ import javax.annotation.Resource;
 
 /**
  * @author huoranger
- * @create 2020/12/5
- * @desc
  **/
 @Component
 public class MessageApprovalCreateListener extends EventBus.EventHandler<Pair<Long>> {

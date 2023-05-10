@@ -21,8 +21,6 @@ import java.util.Map;
 
 /**
  * @author huoranger
- * @create 2020/12/2
- * @desc
  **/
 @Controller
 @RequestMapping("/search")

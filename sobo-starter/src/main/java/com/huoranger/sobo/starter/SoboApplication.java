@@ -7,6 +7,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+
+// 程序入口
 @EnableScheduling
 @SpringBootApplication(scanBasePackages = "com.huoranger.sobo")
 @MapperScan(value = {"com.huoranger.sobo.infrastructure.dal.dao"})

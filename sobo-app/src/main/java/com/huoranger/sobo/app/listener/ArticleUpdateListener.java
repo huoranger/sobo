@@ -13,8 +13,6 @@ import java.util.Set;
 
 /**
  * @author huoranger
- * @create 2020/11/5
- * @desc
  **/
 @Component
 public class ArticleUpdateListener extends EventBus.EventHandler<Pair<Article>> {

@@ -66,7 +66,10 @@ public class ArticleInfoController {
         }
         ArticleInfoResponse articleInfoResponse = resultModel.getData();
 
-        model.addAttribute("posts", webUtil.buildPostsInfo(articleInfoResponse));
+        Map<String, Object> postsInfo = webUtil.buildPostsInfo(articleInfoResponse);
+        model.addAttribute("motto", userApiService.info((Long) postsInfo.get("authorId")).getData().getSignature());
+
+        model.addAttribute("posts", postsInfo);
         model.addAttribute("hasFollow", hasFollow(articleInfoResponse.getAuthorId()));
         model.addAttribute("hasApproval", hasApproval(id));
         model.addAttribute("authArticleList", authArticleList(articleInfoResponse.getAuthorId()));

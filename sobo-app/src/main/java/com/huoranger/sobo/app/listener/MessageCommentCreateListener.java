@@ -17,8 +17,6 @@ import java.util.Map;
 
 /**
  * @author huoranger
- * @create 2020/12/5
- * @desc
  **/
 @Component
 public class MessageCommentCreateListener extends EventBus.EventHandler<Map<String, Object>> {
